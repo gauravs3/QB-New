@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Callback</h2>
+Code: <strong>@ViewBag.Code</strong>
+<br />
+State: <strong>@ViewBag.State</strong>
+<br />
+RealmId: <strong>@ViewBag.RealmId</strong>
+<br />
+Error: <strong>@ViewBag.Error</strong>
+<br />
+@if (ViewBag.Code != "none")
+{
+    accessToken: <strong>@ViewBag.accessToken</strong>
+    <br />
+    refreshToken: <strong>@ViewBag.refreshToken</strong>
+    <br />
+
+    using (Html.BeginForm())
+    {
+        <input type="submit" value="Refresh token" />
+
+        <div class="form-horizontal">
+            <input type="submit" value="Save" formaction="SaveAccount" class="btn btn-primary" />
+
+        </div>
+    }
